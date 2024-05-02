@@ -29,6 +29,7 @@ iframe {
 .contenedor {
     display: flex;
     justify-content: space-around;
+    align-items: stretch; /* Para que los contenedores tengan la misma altura */
     margin-bottom: 20px;
 }
 
@@ -38,6 +39,8 @@ iframe {
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     overflow: hidden;
+    display: flex;
+    flex-direction: column; /* Para que los elementos dentro se apilen verticalmente */
 }
 
 .categoria h2 {
@@ -75,19 +78,44 @@ footer {
 }
 
 /* Agregamos estilos para el botón Ver más */
-#ver-mas {
+.ver-mas {
+    align-self: flex-end; /* Alinea el botón al final del contenedor */
     background-color: #333;
     color: #fff;
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    margin-top: auto; /* Para que el botón se pegue al final */
 }
 
-#ver-mas:hover {
+.ver-mas:hover {
     background-color: #555;
 }
 
-#ver-mas a {
+.ver-mas a {
     text-decoration: none;
     color: #fff;
 }
+
+.botones-login {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.botones-login a {
+    margin-left: 10px;
+    background-color: #333;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    padding: 10px 20px;
+    cursor: pointer;
+    text-decoration: none; /* Quita el subrayado predeterminado */
+}
+
+.botones-login a:hover {
+    background-color: #000000;
+}
+
+

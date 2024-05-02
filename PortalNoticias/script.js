@@ -86,7 +86,7 @@ const Opinion = {
                   const data = JSON.parse(xhr.responseText);
                   const opinion = document.getElementById('noticias-opinion');
                   // Itera solo sobre las primeras 4 noticias
-                  for (let i = 0; i < 4; i++) {
+                  for (let i = 0; i < 6; i++) {
                       const item = data.items[i];
                       const noticia = document.createElement('div');
                       noticia.classList.add('noticia');
