@@ -21,7 +21,6 @@
         <?php
         }
         ?>
-
         </div>
         
         <!-- Aquí insertamos el fragmento de cotizaciones del IBEX-35 -->
@@ -44,6 +43,7 @@
             <button class="ver-mas"><a href="noticias/nacionales.php">Ver más</a></button>
         </section>
     </div>
+
     <div class="contenedor">
         <section id="campoGIB" class="categoria">
             <h2>Campo de Gibraltar</h2>
@@ -59,6 +59,15 @@
             </div>
             <button class="ver-mas"><a href="noticias/opinion.php">Ver más</a></button>
         </section>
+    </div>
+
+    <div class="contenedor">
+    <section id="campoGIB" class="categoria">
+            <h2>Trending</h2>
+            <div class="noticias" id="noticias-trending">
+                <!-- Aquí se mostrarán las noticias con más likes -->
+            </div>
+            <button class="ver-mas"><a href="#">Ver más</a></button>
     </div>
     <footer>
         <p>&copy; 2024 Portal de Noticias</p>
