@@ -1,6 +1,7 @@
 <?php
 
 session_start();
+require_once("bd/bd.php");
 
 // Redirigir si ya hay una sesión activa
 if (isset($_SESSION["usuario"]) && $_SESSION["usuario"] != null) {
@@ -13,13 +14,30 @@ if (isset($_POST["usuario"]) && isset($_POST["contrasena"])) {
     $usuario = $_POST["usuario"];
     $contrasena = $_POST["contrasena"];
 
-    // Aquí puedes realizar la validación del usuario y contraseña en tu base de datos
-    if ($usuario == "pepe" && $contrasena == "") {
-        $_SESSION["usuario"] = $usuario;
-        header("Location: index.php");
-        exit(); // Finalizar el script después de redirigir
-    } else {
-        $_SESSION["error"] = "Usuario o contraseña incorrecto";
+    // Consulta SQL sin usar consulta preparada
+    $consulta = "SELECT COUNT(*) FROM usuarios WHERE nombre_usuario = '$usuario' AND contrasena = '$contrasena'";
+
+    try {
+        // Conectar a la base de datos
+        $conexionBD = new ConexionBD();
+        $conexion = $conexionBD->obtenerConexion();
+
+        // Ejecutar la consulta
+        $resultado = $conexion->query($consulta);
+
+        // Obtener el número de filas encontradas
+        $num_filas = $resultado->fetchColumn();
+
+        // Verificar si se encontraron resultados
+        if ($num_filas > 0) {
+            $_SESSION["usuario"] = $usuario;
+            header("Location: index.php");
+            exit();
+        } else {
+            $_SESSION["error"] = "Usuario o contraseña incorrecto";
+        }
+    } catch (PDOException $e) {
+        die("Error al conectar a la base de datos: " . $e->getMessage());
     }
 }
 ?>
@@ -39,6 +57,10 @@ if (isset($_POST["usuario"]) && isset($_POST["contrasena"])) {
         Usuario: <input type="text" name="usuario"><br>
         Contraseña: <input type="password" name="contrasena"><br>
         <input type="submit" value="Enviar">
+    </form>
+    
+    <form method="get" action="registro.php">
+        <input type="submit" value="Registro">
     </form>
     
     <div style="color: red;">

@@ -9,7 +9,7 @@
 <body>
     <header>
         <h1>Portal de Noticias</h1>
-        <!-- Botones de login, registro y logout -->
+        <!-- Botones de login y logout -->
         <div class="botones-login">
         <?php
             session_start();
@@ -34,14 +34,14 @@
             <div class="noticias" id="noticias-internacionales">
                 <!-- Aquí se mostrarán las noticias internacionales -->
             </div>
-            <button class="ver-mas"><a href="noticias/internacionales.html">Ver más</a></button>
+            <button class="ver-mas"><a href="noticias/internacionales.php">Ver más</a></button>
         </section>
         <section id="nacional" class="categoria">
             <h2>Nacional</h2>
             <div class="noticias" id="noticias-nacionales">
                 <!-- Aquí se mostrarán las noticias nacionales -->
             </div>
-            <button class="ver-mas"><a href="noticias/nacionales.html">Ver más</a></button>
+            <button class="ver-mas"><a href="noticias/nacionales.php">Ver más</a></button>
         </section>
     </div>
     <div class="contenedor">
@@ -50,14 +50,14 @@
             <div class="noticias" id="noticias-campoGIB">
                 <!-- Aquí se mostrarán las noticias del campo de Gibraltar -->
             </div>
-            <button class="ver-mas"><a href="noticias/campoGIB.html">Ver más</a></button>
+            <button class="ver-mas"><a href="noticias/campoGIB.php">Ver más</a></button>
         </section>
         <section id="opinion" class="categoria">
             <h2>Opinión</h2>
             <div class="noticias" id="noticias-opinion">
                 <!-- Aquí se mostrarán las noticias de opinión -->
             </div>
-            <button class="ver-mas"><a href="noticias/opinion.html">Ver más</a></button>
+            <button class="ver-mas"><a href="noticias/opinion.php">Ver más</a></button>
         </section>
     </div>
     <footer>
